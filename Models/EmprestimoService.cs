@@ -12,6 +12,7 @@ namespace Biblioteca.Models
             {
                 bc.Emprestimos.Add(e);
                 bc.SaveChanges();
+    
             }
         }
 
@@ -45,5 +46,6 @@ namespace Biblioteca.Models
                 return bc.Emprestimos.Find(id);
             }
         }
+        
     }
 }

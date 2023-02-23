@@ -1,0 +1,24 @@
+@model List<Usuario>
+@{
+    ViewData["Title"] = "Lista Usuarios Cadastrados";
+}
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Login</th>
+            <th>Senha</th>
+        </tr>
+    </thead>
+    @foreach (Usuario u in Model)
+    {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.Login</td>
+            <td>@u.Senha</td>
+            <th>
+            <td><a href="/Usuario/Edicao/@u.Id">Editar</a></td>  
+            </th>
+            </tr>
+    }
+</table>
