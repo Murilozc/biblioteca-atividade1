@@ -22,6 +22,7 @@ namespace Biblioteca.Controllers
         public IActionResult Index()
         {
             Autenticacao.CheckLogin(this);
+            Console.WriteLine(Criptografia.GerarMD5("1010202030304040"));
             return View();
         }
 
@@ -44,6 +45,7 @@ namespace Biblioteca.Controllers
                 return RedirectToAction("Index");
             }
         }
+        
 
         public IActionResult Privacy()
         {

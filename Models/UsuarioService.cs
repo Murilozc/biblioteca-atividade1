@@ -11,6 +11,7 @@ namespace Biblioteca.Models
         {
             using(BibliotecaContext bc = new BibliotecaContext())
             {
+                u.Senha = Criptografia.GerarMD5 (u.Senha);
                 bc.Usuarios.Add(u);
                 bc.SaveChanges();
             }
@@ -21,7 +22,7 @@ namespace Biblioteca.Models
             {
                 Usuario usuario = bc.Usuarios.Find(u.Id);
                 usuario.Login = u.Login;
-                usuario.Senha = u.Senha;
+                usuario.Senha = Criptografia.GerarMD5 (u.Senha);
 
                 bc.SaveChanges();
             }
